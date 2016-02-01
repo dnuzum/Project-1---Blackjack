@@ -8,4 +8,4 @@ __User Stories:__
 3. I like to play blackjack, but have nowhere/no way to play.
 
 __Wireframe:__
-![alt text](http "Blackjack Wireframe")
+![alt text](https://github.com/dnuzum/Project-1---Blackjack/blob/master/Google%20ChromeScreenSnapz001.png "Blackjack Wireframe")
