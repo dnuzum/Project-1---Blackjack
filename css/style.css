@@ -1,0 +1,147 @@
+body {
+	background-image: url(../images/background.jpg);
+	background-size: cover;
+}
+
+.header {
+	text-align: center;
+}
+
+body{
+	margin:0;
+	font-size:.7em;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+fieldset{
+	padding:0 15px 10px 15px;
+} 
+h1{
+	font-size:2.4em;
+	margin:0;
+	color:#FFF;
+}
+h2{
+	font-size:1.7em;
+	margin:0;
+	color:#CC0000;
+} 
+h3{
+	font-size:1.2em;
+	margin:10px 0 0 0;
+	color:#000000;
+} 
+
+#content{
+	margin:0 0 0 2%;
+	position:relative;
+}
+.content-container{
+	background:#FFF;
+	width:96%;
+	margin-top:8px;
+	padding:10px;
+	position:relative;
+}
+div.card
+{
+	display: inline-block;
+	width: 100px;
+	height: 150px;
+	border: solid 1px #333;
+	border-radius: 5px 5px 5px 5px;
+	float: left;
+	margin-right: 10px;
+	position: relative;
+	background-color: white;
+}
+
+div.card.hearts, div.card.diamonds
+{
+	color: red;
+}
+
+div.card div.main-number
+{
+	font-size: 36px;
+	font-weight: bold;
+	text-align: center;
+	margin: 0px auto;
+	margin-top: 50px;
+}
+
+div.card-value, div.suit
+{
+	position: absolute;
+	left: 5px;
+}
+
+div.card-value{
+	top: 5px;
+}
+div.card-value{
+	top: 20px;
+}
+
+div.card-value.invert, div.suit.invert
+{
+	transform: rotate(180deg);
+	right: 5px;
+	text-align: right;
+	top: auto;
+	left: auto;
+}
+
+div.card-value.invert{
+	bottom: 5px;
+}
+div.suit.invert{
+	bottom: 20px;
+}
+
+div.dealer-area{
+	background-color: #194D1E;
+}
+
+div.user-area{
+	float: left;
+	background-color: #194D1E;
+}
+
+div#user-score, div#dealer-score
+{
+	display: inline-block;
+}
+
+div.score-parent
+{
+	width: 100%;
+	display: inline-block;
+}
+
+div.score-parent p
+{
+	display: inline-block;
+}
+
+div#dealer-score
+{
+	visibility: hidden;
+}
+
+div.card#hidden-card
+{
+	background-color: #CBE0FD;
+	background-image: url(../images/logo.png);
+	background-size: contain;
+}
+
+div.card#hidden-card div
+{
+	visibility: hidden;
+}
+
+div.controls input
+{
+	margin-left: 20px;
+	width: 200px;
+}
