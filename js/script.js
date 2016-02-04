@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	// Once page loaded, begins game immediately
 	window.addEventListener("load", start, false);
 	function start() {
 		play();
@@ -13,7 +14,7 @@ $(document).ready(function() {
 		document.getElementById("stand").addEventListener("click", function(){deck1.stand();},false);
 		document.getElementById("replay").addEventListener("click", function(){deck1.deal21();}, false);
 	}
-
+	// game setup
 	function Deck() {
 		this.deck = new Array();
 		this.userTotal;
@@ -35,7 +36,7 @@ $(document).ready(function() {
 			this.shuffle();
 			status.innerHTML="New deck is in play!";
 	}
-
+	// card creation through line 93
 	this.createDeck = function createDeck() {
 		var numCards=0;
 		var suit, symbol, name;
@@ -104,8 +105,7 @@ $(document).ready(function() {
 			this.deck[i] = randomDeck[i];
 		}
 	};
-
-
+	// calculate hand value
 	this.calcValue = function calcValue(hand) {
 		var val = 0;
 		var tempArr = hand;
@@ -118,20 +118,20 @@ $(document).ready(function() {
 		}
 		return val;
 	};
-
+	// set value for shuffle deck
 	this.emptyDeck = function emptyDeck() {
 		if(this.deck.length < 1) return true;
 		else return false;
 	}
-
+	// deal cards
 	this.deal21 = function deal21() {
 		status.innerHTML="";
 		this.money--;
 		
-		//reset stuff to replay game
-		money.innerHTML= "Money: " + this.money;
-		dealerHand.innerHTML="<h2>Dealer Hand</h2>";
-		userHand.innerHTML="<h2>User Hand</h2>";
+		//reset stuff to replay game and set initial game state
+		money.innerHTML= "Your Money: $" + this.money;
+		dealerHand.innerHTML="<h3>Dealer Hand</h3>";
+		userHand.innerHTML="<h3>Your Hand</h3>";
 		this.userTotal=0;
 		this.dealerTotal=0;
 		this.userBust=false;
@@ -165,7 +165,7 @@ $(document).ready(function() {
 		if(this.userTotal === 21 && this.dealerTotal < 21) this.gameOver(blackjack);
 		else if(this.dealerTotal === 21) this.gameOver();
 	};
-
+	// user call for additional card
 	this.hit = function hit() {
 		if(this.emptyDeck())this.newDeck();
 		this.curusrHand.push(this.deck.pop());
@@ -178,7 +178,7 @@ $(document).ready(function() {
 				this.gameOver();
 			}
 	};
-
+	// user state for end turn
 	this.stand = function stand() {
 		while(this.dealerTotal < 17) {
 			if(this.emptyDeck())this.newDeck();
@@ -193,7 +193,7 @@ $(document).ready(function() {
 		}
 		this.gameOver();
 	}
-
+	// sets auto/blackjack win and game end types
 	this.gameOver = function gameOver(blackjack) {
 		document.getElementById("hidden-card").setAttribute("id","");
 		dealerScore.setAttribute("style", "visibility: visible;");
@@ -225,7 +225,7 @@ $(document).ready(function() {
 		}
 	};
 }
-
+	// set card visuals
 	function Card(suit, val, name, symbol) {
 		this.suit = suit;
 		this.val = val;
